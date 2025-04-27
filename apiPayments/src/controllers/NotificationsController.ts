@@ -1,10 +1,20 @@
 import { Request, Response } from "express";
 import { processNotification } from "../services/notifications.service";
+import { EmailSms } from "../emails/emailService";
 
 export class NotificationsController {
-  static createNotification(req: Request, res: Response) {
+  static async createNotification(req: Request, res: Response) {
     try {
-      const { type } = req.body;
+      const { type, from, to, subject, message } = req.body;
+
+      if (type === "Email") {
+        await EmailSms.sendConfirmationEmail({
+          from: from,
+          email: to,
+          subject: subject,
+          message: message,
+        });
+      }
       const result = processNotification(type, req.body);
 
       res.json({
@@ -13,6 +23,7 @@ export class NotificationsController {
         FinalMessage: result,
       });
     } catch (error: any) {
+      console.log(error);
       res.status(400).json({
         message: "Error al enviar la notificación",
         success: false,
