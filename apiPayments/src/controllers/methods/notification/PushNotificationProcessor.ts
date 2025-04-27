@@ -1,7 +1,7 @@
 import { NotificationDirector } from "../../../builders/directors/NotificationDirector";
-import { PushBuilder } from "../../../builders/push/PushBuilder";
-import { PushNotification } from "../../../builders/push/PushNotification";
-import { IPushBuilder } from "../../../builders/push/IPushBuilder";
+import { PushBuilder } from "../../../builders/Concrete Builder/PushBuilder";
+import { PushNotification } from "../../../builders/Productos/PushNotification";
+import { IPushBuilder } from "../../../builders/Builder/IPushBuilder";
 import { INotificationProcessor } from "../../../services/notifications";
 
 export class PushProcessor implements INotificationProcessor {

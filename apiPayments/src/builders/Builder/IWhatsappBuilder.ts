@@ -1,5 +1,5 @@
 import { INotificationBuilder } from "../interfaces/INotificationBuilder";
-import { WhatsappNotification } from "./WhatsAppNotification";
+import { WhatsappNotification } from "../Productos/WhatsAppNotification";
 
 
 export interface IWhatsappBuilder extends INotificationBuilder<WhatsappNotification> {

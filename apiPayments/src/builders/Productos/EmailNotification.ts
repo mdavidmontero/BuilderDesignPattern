@@ -8,7 +8,7 @@ export class EmailNotification {
   priority?: 'alta' | 'media' | 'baja';
 
   send(): string {
-    return `Enviando Email a ${this.to} con asunto "${this.subject}"`;
+    return `Enviando Email a ${this.to} con asunto "${this.subject}",`;
   }
   
 }

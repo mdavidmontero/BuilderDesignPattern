@@ -1,5 +1,5 @@
 import { INotificationBuilder } from "../interfaces/INotificationBuilder";
-import { EmailNotification } from "./EmailNotification";
+import { EmailNotification } from "../Productos/EmailNotification";
 
 export interface IEmailBuilder extends INotificationBuilder<EmailNotification> {
   setTo(to: string): this;
