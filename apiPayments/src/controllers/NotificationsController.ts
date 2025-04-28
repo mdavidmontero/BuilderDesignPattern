@@ -6,7 +6,6 @@ export class NotificationsController {
   static async createNotification(req: Request, res: Response) {
     try {
       const { type, from, to, subject, message } = req.body;
-
       if (type === "Email") {
         await EmailSms.sendConfirmationEmail({
           from: from,
@@ -16,7 +15,6 @@ export class NotificationsController {
         });
       }
       const result = processNotification(type, req.body);
-
       res.json({
         message: "Notificación enviada correctamente",
         success: true,

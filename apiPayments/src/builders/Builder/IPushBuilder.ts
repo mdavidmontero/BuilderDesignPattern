@@ -1,5 +1,5 @@
 import { INotificationBuilder } from "../interfaces/INotificationBuilder";
-import { PushNotification } from "./PushNotification";
+import { PushNotification } from "../Productos/PushNotification";
 
 export interface IPushBuilder extends INotificationBuilder<PushNotification> {
   setDeviceToken(token: string): this;

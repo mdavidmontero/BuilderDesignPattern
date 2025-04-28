@@ -1,8 +1,10 @@
-import { EmailNotification } from "./EmailNotification";
-import { IEmailBuilder } from "./IEmailBuilder";
+import { IEmailBuilder } from "../Builder/IEmailBuilder";
+import { EmailNotification } from "../Productos/EmailNotification";
+
 
 
 export class EmailBuilder implements IEmailBuilder {
+ 
   private email: EmailNotification;
 
   constructor() {

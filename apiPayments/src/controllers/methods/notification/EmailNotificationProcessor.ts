@@ -1,8 +1,8 @@
 import { NotificationDirector } from "../../../builders/directors/NotificationDirector";
-import { EmailBuilder } from "../../../builders/email/EmailBuilder";
-import { EmailNotification } from "../../../builders/email/EmailNotification";
+import { EmailNotification } from "../../../builders/Productos/EmailNotification";
 import { INotificationProcessor } from "../../../services/notifications";
-import { IEmailBuilder } from "../../../builders/email/IEmailBuilder";
+import { IEmailBuilder } from "../../../builders/Builder/IEmailBuilder";
+import { EmailBuilder } from "../../../builders/Concrete Builder/EmailBuilder";
 
 export class EmailProcessor implements INotificationProcessor {
   process(message: any): string {

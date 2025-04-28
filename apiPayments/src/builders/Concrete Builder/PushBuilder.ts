@@ -1,4 +1,4 @@
-import { PushNotification } from './PushNotification';
+import { PushNotification } from '../Productos/PushNotification';
 import { INotificationBuilder } from '../interfaces/INotificationBuilder';
 
 export class PushBuilder implements INotificationBuilder<PushNotification> {

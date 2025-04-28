@@ -1,5 +1,5 @@
 import { INotificationBuilder } from "../interfaces/INotificationBuilder";
-import { SmsNotification } from "./SmsNotification";
+import { SmsNotification } from "../Productos/SmsNotification";
 
 export interface ISmsBuilder extends INotificationBuilder<SmsNotification> {
   setPhoneNumber(phoneNumber: string): this;

@@ -1,4 +1,4 @@
-import { SmsNotification } from './SmsNotification';
+import { SmsNotification } from '../Productos/SmsNotification';
 import { INotificationBuilder } from '../interfaces/INotificationBuilder';
 
 export class SmsBuilder implements INotificationBuilder<SmsNotification> {
