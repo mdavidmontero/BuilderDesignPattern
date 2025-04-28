@@ -9,7 +9,6 @@ type TransportConfig = {
     pass: string;
   };
 };
-console.log(process.env.EMAIL_SERVICE);
 
 const config = (): TransportConfig => {
   return {

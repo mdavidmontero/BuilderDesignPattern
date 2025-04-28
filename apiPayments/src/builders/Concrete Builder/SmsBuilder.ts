@@ -1,5 +1,5 @@
-import { SmsNotification } from '../Productos/SmsNotification';
-import { INotificationBuilder } from '../interfaces/INotificationBuilder';
+import { SmsNotification } from "../Productos/SmsNotification";
+import { INotificationBuilder } from "../interfaces/INotificationBuilder";
 
 export class SmsBuilder implements INotificationBuilder<SmsNotification> {
   private sms!: SmsNotification;
@@ -37,4 +37,3 @@ export class SmsBuilder implements INotificationBuilder<SmsNotification> {
     return this.sms;
   }
 }
-

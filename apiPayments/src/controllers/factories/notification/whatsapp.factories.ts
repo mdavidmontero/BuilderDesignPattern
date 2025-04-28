@@ -4,7 +4,7 @@ import { WhatsappProcessor } from "../../methods/notification/WhatsappNotificati
 import { NotificationFactory } from "../../NotificationFactory";
 
 export class WhatsappNotificationFactory extends NotificationFactory {
-    createNotification(): INotificationProcessor {
-      return new WhatsappProcessor();
-    }
+  createNotification(): INotificationProcessor {
+    return new WhatsappProcessor();
   }
+}

@@ -1,10 +1,7 @@
 import { IEmailBuilder } from "../Builder/IEmailBuilder";
 import { EmailNotification } from "../Productos/EmailNotification";
 
-
-
 export class EmailBuilder implements IEmailBuilder {
- 
   private email: EmailNotification;
 
   constructor() {
@@ -44,7 +41,7 @@ export class EmailBuilder implements IEmailBuilder {
     this.email.attachments = attachments;
     return this;
   }
-  setPriority(priority: 'alta' | 'media' | 'baja') {
+  setPriority(priority: "alta" | "media" | "baja") {
     this.email.priority = priority;
     return this;
   }

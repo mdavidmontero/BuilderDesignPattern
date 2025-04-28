@@ -10,8 +10,9 @@ export class PushProcessor implements INotificationProcessor {
     const director = new NotificationDirector<PushNotification, IPushBuilder>();
     director.setBuilder(builder);
 
-    const push = director.construct(b =>
-      b.setDeviceToken(message.deviceToken)
+    const push = director.construct((b) =>
+      b
+        .setDeviceToken(message.deviceToken)
         .setTitle(message.title)
         .setMessage(message.message)
         .setImageUrl(message.imageUrl || "")

@@ -1,8 +1,9 @@
+import { INotificationBuilder } from "../interfaces/INotificationBuilder";
+import { WhatsappNotification } from "../Productos/WhatsAppNotification";
 
-import { INotificationBuilder } from '../interfaces/INotificationBuilder';
-import { WhatsappNotification } from '../Productos/WhatsAppNotification';
-
-export class WhatsappBuilder implements INotificationBuilder<WhatsappNotification> {
+export class WhatsappBuilder
+  implements INotificationBuilder<WhatsappNotification>
+{
   private wa!: WhatsappNotification;
 
   reset(): void {

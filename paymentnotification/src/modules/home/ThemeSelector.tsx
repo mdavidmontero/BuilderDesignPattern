@@ -1,4 +1,3 @@
-// src/components/ThemeSelector.tsx
 import { useThemeStore } from "@/store/themeStore";
 import {
   Select,
@@ -12,11 +11,9 @@ import { useEffect } from "react";
 export const ThemeSelector = () => {
   const { theme, setTheme } = useThemeStore();
 
-  // Para manejar el modo "dark" de Tailwind (si usas `dark:` en clases)
   useEffect(() => {
     const root = window.document.documentElement;
     if (theme.name === "dark") {
-      console.log(theme.name);
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");

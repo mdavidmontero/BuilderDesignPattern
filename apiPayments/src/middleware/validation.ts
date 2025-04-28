@@ -12,4 +12,3 @@ export const handleInputErrors = (
   }
   next();
 };
-

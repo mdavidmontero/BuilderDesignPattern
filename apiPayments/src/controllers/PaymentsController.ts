@@ -2,8 +2,10 @@ import { Request, Response } from "express";
 import { processPayment } from "../services/payments.service";
 
 interface Payment {
+  name: string;
   type: string;
   amount: number;
+  email: string;
 }
 
 const pagos: Payment[] = [];
@@ -11,14 +13,31 @@ const pagos: Payment[] = [];
 export class PaymentsController {
   static createPayment(req: Request, res: Response) {
     try {
-      const { type, amount } = req.body;
+      const {
+        name,
+        type,
+        amount,
+        email,
+        // name,
+        // includeLogo = true,
+        // title = "Factura de Pago",
+        // includePaymentDetails = true,
+        // includeUserInfo = true,
+        // theme = "DARK",
+        // includeTimestamp = true,
+        // footerMessage = "Gracias por su compra",
+        // format = "A4",
+      } = req.body;
+
       const numericAmount = parseFloat(amount);
 
       const result = processPayment(type, numericAmount);
-      console.log(result);
+
       const newPayment: Payment = {
+        name,
         type,
         amount: result,
+        email,
       };
 
       pagos.push(newPayment);

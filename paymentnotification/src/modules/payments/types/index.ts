@@ -5,8 +5,10 @@ export const paymentSchema = z.object({
   message: z.string(),
   data: z.array(
     z.object({
+      name: z.string(),
       type: z.string(),
       amount: z.number(),
+      email: z.string(),
     })
   ),
 });

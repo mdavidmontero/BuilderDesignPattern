@@ -5,13 +5,13 @@ import { EmailSms } from "../emails/emailService";
 export class NotificationsController {
   static async createNotification(req: Request, res: Response) {
     try {
-      const { type, from, to, subject, message } = req.body;
+      const { type, from, to, subject, body } = req.body;
       if (type === "Email") {
         await EmailSms.sendConfirmationEmail({
           from: from,
           email: to,
           subject: subject,
-          message: message,
+          body: body,
         });
       }
       const result = processNotification(type, req.body);
@@ -21,7 +21,6 @@ export class NotificationsController {
         FinalMessage: result,
       });
     } catch (error: any) {
-      console.log(error);
       res.status(400).json({
         message: "Error al enviar la notificación",
         success: false,

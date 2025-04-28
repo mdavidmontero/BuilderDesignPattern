@@ -3,7 +3,7 @@ import { SmsProcessor } from "../../methods/notification/SMSNotificationProcesso
 import { NotificationFactory } from "../../NotificationFactory";
 
 export class SmsNotificationFactory extends NotificationFactory {
-    createNotification(): INotificationProcessor {
-      return new SmsProcessor();
-    }
+  createNotification(): INotificationProcessor {
+    return new SmsProcessor();
   }
+}

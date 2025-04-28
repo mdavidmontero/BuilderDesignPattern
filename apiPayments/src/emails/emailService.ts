@@ -4,7 +4,7 @@ type EmailType = {
   from: string;
   email: string;
   subject: string;
-  message: string;
+  body: string;
 };
 
 export class EmailSms {
@@ -13,7 +13,7 @@ export class EmailSms {
       from: user.from,
       to: user.email,
       subject: user.subject,
-      html: `${user.message}`,
+      html: `${user.body}`,
     });
   };
 }

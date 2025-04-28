@@ -9,6 +9,8 @@ const router = Router();
 router.get("/", PaymentsController.getAllPayments);
 router.post(
   "/",
+  body("name").isString().notEmpty().withMessage("El nombre es obligatorio"),
+  body("email").isEmail().withMessage("El email no es válido"),
   body("type")
     .isString()
     .notEmpty()

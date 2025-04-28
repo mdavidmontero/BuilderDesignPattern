@@ -3,7 +3,7 @@ import { PushProcessor } from "../../methods/notification/PushNotificationProces
 import { NotificationFactory } from "../../NotificationFactory";
 
 export class PushNotificationFactory extends NotificationFactory {
-    createNotification(): INotificationProcessor {
-      return new PushProcessor();
-    }
+  createNotification(): INotificationProcessor {
+    return new PushProcessor();
   }
+}

@@ -1,5 +1,5 @@
-import { PushNotification } from '../Productos/PushNotification';
-import { INotificationBuilder } from '../interfaces/INotificationBuilder';
+import { PushNotification } from "../Productos/PushNotification";
+import { INotificationBuilder } from "../interfaces/INotificationBuilder";
 
 export class PushBuilder implements INotificationBuilder<PushNotification> {
   private push!: PushNotification;
@@ -33,7 +33,7 @@ export class PushBuilder implements INotificationBuilder<PushNotification> {
     return this;
   }
 
-  setPriority(priority: 'urgente' | 'normal') {
+  setPriority(priority: "urgente" | "normal") {
     this.push.priority = priority;
     return this;
   }

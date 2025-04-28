@@ -19,6 +19,8 @@ export class DarkPaymentFormFactory implements BasePaymentFormFactory {
     const Form = () => {
       const [tipoPago, setTipoPago] = useState("");
       const [monto, setMonto] = useState("");
+      const [email, setEmail] = useState("");
+      const [name, setName] = useState("");
       const queryClient = useQueryClient();
       const { mutate } = useMutation({
         mutationFn: createPayment,
@@ -35,8 +37,10 @@ export class DarkPaymentFormFactory implements BasePaymentFormFactory {
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const data = {
+          name,
           type: tipoPago,
           amount: parseFloat(monto),
+          email,
         };
         mutate(data);
       };
@@ -68,6 +72,27 @@ export class DarkPaymentFormFactory implements BasePaymentFormFactory {
               value={monto}
               min="0"
               onChange={(e) => setMonto(e.target.value)}
+              className="mt-1 bg-zinc-800 border-zinc-600 text-white placeholder:text-zinc-400"
+            />
+          </div>
+          <div>
+            <Label className="text-white">Email</Label>
+            <Input
+              type="email"
+              placeholder="Ingrese su email"
+              value={email}
+              min="0"
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-1 bg-zinc-800 border-zinc-600 text-white placeholder:text-zinc-400"
+            />
+          </div>
+          <div>
+            <Label className="text-white">Nombre</Label>
+            <Input
+              type="text"
+              placeholder="Ingrese su nombre"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="mt-1 bg-zinc-800 border-zinc-600 text-white placeholder:text-zinc-400"
             />
           </div>

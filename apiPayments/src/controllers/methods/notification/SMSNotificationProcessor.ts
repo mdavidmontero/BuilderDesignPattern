@@ -10,10 +10,11 @@ export class SmsProcessor implements INotificationProcessor {
     const director = new NotificationDirector<SmsNotification, ISmsBuilder>();
     director.setBuilder(builder);
 
-    const sms = director.construct(b =>
-      b.setPhoneNumber(message.phoneNumber)
+    const sms = director.construct((b) =>
+      b
+        .setPhoneNumber(message.phoneNumber)
         .setMessage(message.message)
-        .setSenderId(message.senderId || '')
+        .setSenderId(message.senderId || "")
         .setDeliveryReportRequired(message.deliveryReportRequired || false)
         .setScheduleTime(new Date(message.scheduleTime || new Date()))
     );

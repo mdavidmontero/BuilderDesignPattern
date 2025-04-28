@@ -19,6 +19,8 @@ export class LightPaymentFormFactory implements BasePaymentFormFactory {
     const Form = () => {
       const [tipoPago, setTipoPago] = useState("");
       const [monto, setMonto] = useState("");
+      const [email, setEmail] = useState("");
+      const [name, setName] = useState("");
 
       const queryClient = useQueryClient();
       const { mutate } = useMutation({
@@ -36,8 +38,10 @@ export class LightPaymentFormFactory implements BasePaymentFormFactory {
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const data = {
+          name: name,
           type: tipoPago,
           amount: parseFloat(monto),
+          email: email,
         };
         mutate(data);
       };
@@ -47,6 +51,17 @@ export class LightPaymentFormFactory implements BasePaymentFormFactory {
           onSubmit={handleSubmit}
           className="w-full max-w-md p-6 bg-white rounded-xl shadow space-y-4 border"
         >
+          <div>
+            <Label>Nombre</Label>
+            <Input
+              type="text"
+              placeholder="Ingrese su nombre"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+
           <div>
             <Label className="text-black">Tipo de Pago</Label>
             <Select onValueChange={setTipoPago}>
@@ -69,6 +84,16 @@ export class LightPaymentFormFactory implements BasePaymentFormFactory {
               placeholder="Ingrese el monto"
               value={monto}
               onChange={(e) => setMonto(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+          <div>
+            <Label>Email</Label>
+            <Input
+              type="email"
+              placeholder="Ingrese su email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="mt-1"
             />
           </div>

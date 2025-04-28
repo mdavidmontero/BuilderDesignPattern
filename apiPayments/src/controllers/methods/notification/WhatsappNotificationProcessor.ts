@@ -7,11 +7,15 @@ import { INotificationProcessor } from "../../../services/notifications";
 export class WhatsappProcessor implements INotificationProcessor {
   process(message: any): string {
     const builder = new WhatsappBuilder();
-    const director = new NotificationDirector<WhatsappNotification, IWhatsappBuilder>();
+    const director = new NotificationDirector<
+      WhatsappNotification,
+      IWhatsappBuilder
+    >();
     director.setBuilder(builder);
 
-    const wa = director.construct(b =>
-      b.setPhoneNumber(message.phoneNumber)
+    const wa = director.construct((b) =>
+      b
+        .setPhoneNumber(message.phoneNumber)
         .setMessage(message.message)
         .setMediaUrl(message.mediaUrl || "")
         .setCaption(message.caption || "")

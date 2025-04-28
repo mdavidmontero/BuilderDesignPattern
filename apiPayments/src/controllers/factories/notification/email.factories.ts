@@ -3,7 +3,7 @@ import { EmailProcessor } from "../../methods/notification/EmailNotificationProc
 import { NotificationFactory } from "../../NotificationFactory";
 
 export class EmailNotificationFactory extends NotificationFactory {
-    createNotification(): INotificationProcessor {
-      return new EmailProcessor();
-    }
+  createNotification(): INotificationProcessor {
+    return new EmailProcessor();
   }
+}

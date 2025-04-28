@@ -7,12 +7,16 @@ import { EmailBuilder } from "../../../builders/Concrete Builder/EmailBuilder";
 export class EmailProcessor implements INotificationProcessor {
   process(message: any): string {
     const builder = new EmailBuilder();
-    const director = new NotificationDirector<EmailNotification, IEmailBuilder>();
+    const director = new NotificationDirector<
+      EmailNotification,
+      IEmailBuilder
+    >();
 
     director.setBuilder(builder);
 
-    const email = director.construct(b =>
-      b.setTo(message.to)
+    const email = director.construct((b) =>
+      b
+        .setTo(message.to)
         .setSubject(message.subject)
         .setBody(message.body)
         .setCc(message.cc || [])
