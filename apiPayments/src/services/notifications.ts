@@ -1,3 +1,3 @@
 export interface INotificationProcessor {
-    process(message: string): string;
+    process(message: any): any;
   }

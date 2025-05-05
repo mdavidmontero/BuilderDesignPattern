@@ -14,8 +14,8 @@ export const createPayment = async (formData: PaymentType) => {
     const formEmail = {
       type: "Email",
       to: formData.email,
-      subject: "Pago realizado correctamente",
-      body: "Gracias por su compra, que vuelva pronto",
+      subject: "Confirmación de Pago",
+      body: "Gracias por su pago. (Plantilla base)",
     };
 
     await apiAxios.post("/notification", formEmail);
